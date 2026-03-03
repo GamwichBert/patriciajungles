@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Última Pergunta...</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💖</text></svg>">
+    <style>
+        .surprise-body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+            flex-direction: column;
+            overflow: hidden;
+            background: radial-gradient(circle, #2a0845, #6441A5);
+        }
+
+        .question-box {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(15px);
+            padding: 50px;
+            border-radius: 20px;
+            border: 2px solid rgba(255, 105, 180, 0.5);
+            box-shadow: 0 0 30px rgba(255, 105, 180, 0.3);
+            z-index: 10;
+        }
+
+        h1.big-question {
+            font-family: 'Cinzel', serif;
+            font-size: 3.5rem;
+            color: #ff9ee5;
+            text-shadow: 0 0 15px rgba(255, 105, 180, 0.6);
+            margin-bottom: 40px;
+        }
+
+        .answers {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            position: relative;
+            height: 80px;
+        }
+
+        .btn-answer {
+            font-family: 'Cinzel', serif;
+            font-size: 1.8rem;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-yes {
+            background: linear-gradient(45deg, #ff6b6b, #ff4757);
+            color: white;
+            box-shadow: 0 5px 15px rgba(255, 71, 87, 0.4);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-yes:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(255, 71, 87, 0.6);
+        }
+
+        .btn-no {
+            background: #eccc68;
+            color: #2f3542;
+            position: absolute;
+            box-shadow: 0 5px 15px rgba(236, 204, 104, 0.4);
+            left: 55%;
+        }
+
+        /* Coracoes e brilhos especificos desta pagina */
+        .sparkle {
+            position: absolute;
+            pointer-events: none;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.8);
+            animation: twinkle 2s infinite;
+        }
+
+        @keyframes twinkle {
+
+            0%,
+            100% {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1.2);
+            }
+        }
+    </style>
+</head>
+
+<body class="surprise-body">
+
+    <!-- Particulas geradas via JS -->
+    <div id="sparkle-container"></div>
+
+    <div class="question-box">
+        <h1 class="big-question">Gostaria de me dar o seu pss pss?</h1>
+        <div class="answers">
+            <a href="final.html" class="btn-answer btn-yes">Sim 💕</a>
+            <button class="btn-answer btn-no" id="btnNo" onmouseover="moveNo(this)">Não 💔</button>
+        </div>
+    </div>
+
+    <script>
+        // Função para fugir com o botão "Não"
+        function moveNo(btn) {
+            // Pegar as dimensões da janela e descontar o super tamanho do botão para ele não sair da tela
+            const maxX = window.innerWidth - btn.clientWidth - 30;
+            const maxY = window.innerHeight - btn.clientHeight - 30;
+
+            // Gerar posição que nunca fica menor que 20px (para não colar no topo/esquerda)
+            const newX = Math.max(20, Math.random() * maxX);
+            const newY = Math.max(20, Math.random() * maxY);
+
+            btn.style.position = 'fixed';
+            btn.style.left = newX + 'px';
+            btn.style.top = newY + 'px';
+        }
+
+        // Criar estrelinhas / brilhos de amor e gratidao
+        const container = document.getElementById('sparkle-container');
+        for (let i = 0; i < 40; i++) {
+            let spark = document.createElement('div');
+            spark.className = 'sparkle';
+            spark.style.left = Math.random() * 100 + 'vw';
+            spark.style.top = Math.random() * 100 + 'vh';
+
+            let size = Math.random() * 4 + 2;
+            spark.style.width = size + 'px';
+            spark.style.height = size + 'px';
+
+            spark.style.animationDelay = Math.random() * 2 + 's';
+
+            // Fazer alguns serem rosinhas claros
+            if (Math.random() > 0.5) {
+                spark.style.background = '#ffb8d9';
+                spark.style.boxShadow = '0 0 10px 2px rgba(255, 184, 217, 0.8)';
+            }
+
+            container.appendChild(spark);
+        }
+    </script>
+</body>
+
+</html>

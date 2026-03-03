@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patricia & Jungles - Uma Jornada Épica</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💍</text></svg>">
+</head>
+
+<body>
+    <div class="magic-bg"></div>
+
+    <!-- Menu de Navegação -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">J ⚡ P</a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">A Nossa História</a></li>
+                <li><a href="futuro.html">O Nosso Futuro</a></li>
+                <li><a href="gremio.html">Sangue Azul</a></li>
+                <li><a href="aventuras.html">Nossas Aventuras</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header>
+            <h1>Patricia & Jungles</h1>
+            <p class="subtitle">Um Voto Inquebrável que começou com um match improvável...</p>
+
+            <div class="counter-box" id="timeCounter">
+                <div class="time-box"><span id="days">0</span>
+                    <p>Dias</p>
+                </div>
+                <div class="time-box"><span id="hours">0</span>
+                    <p>Horas</p>
+                </div>
+                <div class="time-box"><span id="minutes">0</span>
+                    <p>Minutos</p>
+                </div>
+                <div class="time-box"><span id="seconds">0</span>
+                    <p>Segundos</p>
+                </div>
+            </div>
+            <p class="desde-text">...desde que a nossa Sociedade do Anel foi formada em 24/06/2025</p>
+        </header>
+
+        <div class="fantasy-images">
+            <img src="hp_owl.png" alt="Hogwarts Express/Letters" class="fantasy-img">
+            <img src="lotr_ring.png" alt="A Sociedade do Anel" class="fantasy-img">
+            <img src="hp_hogwarts.png" alt="Castelo de Hogwarts" class="fantasy-img">
+            <img src="lotr_evenstar.png" alt="Estrela Vespertina" class="fantasy-img">
+            <img src="hp_snitch.png" alt="Pomo de Ouro" class="fantasy-img">
+        </div>
+
+        <div class="story-section">
+            <div class="buttons-container">
+                <button class="story-btn active" onclick="showStory(1)">
+                    <span class="icon">🔮</span> O Feitiço do Match
+                </button>
+                <button class="story-btn" onclick="showStory(2)">
+                    <span class="icon">🍻</span> O Encontro no Prancing Pony
+                </button>
+                <button class="story-btn" onclick="showStory(3)">
+                    <span class="icon">💐</span> A Profecia do Buquê
+                </button>
+                <button class="story-btn" onclick="showStory(4)">
+                    <span class="icon">⚡</span> A Nossa Magia
+                </button>
+            </div>
+
+            <div class="content-display">
+                <p id="storyContent" class="fade-in">Tudo começou no dia 24 de Junho, a noite mais fria do ano.
+                    Como se a coruja de Hogwarts tivesse entregue a carta no aplicativo certo, os nossos perfis
+                    cruzaram-se no Tinder. Parecia magia intervir onde os trouxas chamam de acaso. E assim começou
+                    a nossa jornada épica, formando a nossa própria Sociedade do Anel de duas pessoas, afinal, pra nós
+                    dois só basta a gente.
+                </p>
+            </div>
+        </div>
+
+        <!-- Seção de Pergaminho Interativo -->
+        <div class="scroll-section">
+            <h2>Abra os Pergaminhos Secretos</h2>
+            <p class="scroll-instruction">Clique em um pergaminho para ler o que está selado...</p>
+
+            <div class="scroll-container">
+                <div class="scroll-item" onclick="toggleScroll(this)">
+                    <div class="scroll-top"></div>
+                    <div class="scroll-paper">
+                        <div class="scroll-content">
+                            <p class="quote">"Eu preferiria compartilhar uma vida inteira com você a encarar todas as
+                                Eras deste mundo sozinha."</p>
+                            <p class="author">- Arwen</p>
+                        </div>
+                    </div>
+                    <div class="scroll-bottom"></div>
+                    <div class="scroll-seal">Voto</div>
+                </div>
+
+                <div class="scroll-item" onclick="toggleScroll(this)">
+                    <div class="scroll-top"></div>
+                    <div class="scroll-paper">
+                        <div class="scroll-content">
+                            <p class="quote">"Depois de todo esse tempo? Sempre."</p>
+                            <p class="author">- Severo Snape</p>
+                        </div>
+                    </div>
+                    <div class="scroll-bottom"></div>
+                    <div class="scroll-seal">Sempre</div>
+                </div>
+
+                <div class="scroll-item" onclick="toggleScroll(this)">
+                    <div class="scroll-top"></div>
+                    <div class="scroll-paper">
+                        <div class="scroll-content">
+                            <p class="quote">"Eu sou meio estranho, mas sinto as energias e aprendi ler o universo.
+                                Eu tinha a absoluta certeza que o buquê ficaria contigo. E assim foi."</p>
+                            <p class="author">- A Profecia</p>
+                        </div>
+                    </div>
+                    <div class="scroll-bottom"></div>
+                    <div class="scroll-seal">Destino</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

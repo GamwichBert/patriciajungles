@@ -35,7 +35,7 @@ if (document.getElementById("timeCounter")) {
 const stories = {
     1: "Tudo começou no dia 24 de Junho, a noite mais fria do ano. \n Como se a coruja de Hogwarts tivesse entregue a carta no aplicativo certo, os nossos perfis cruzaram-se no Tinder. Parecia magia intervir onde os trouxas chamam de acaso. \n E assim começou a nossa jornada épica, formando a nossa própria Sociedade do Anel de duas pessoas, afinal, pra nós dois só basta a gente.",
 
-    2: "Lembra do primeiro dia? Da expectativa imensa? E então fomos ao Galgo.\n Aquele bar foi o nosso Prancing Pony. Tivemos uma pizza quadrada absolutamente incrível e, acima de tudo, o chopp do Iron Maiden. Cá entre nós, sim, ele tem gosto de baunilha, porque afinal, tu tens sempre razão. \n Foi ali que a nossa jornada juntos realmente começou.",
+    2: "Lembra do primeiro dia? Da expectativa imensa? \n E então fomos ao Galgo.Aquele bar foi o nosso Prancing Pony. Tivemos uma pizza quadrada absolutamente incrível e, acima de tudo, o chopp do Iron Maiden. Cá entre nós, sim, ele tem gosto de baunilha, porque afinal, tu tens sempre razão. \n Foi ali que a nossa jornada juntos realmente começou.",
 
     3: "Eu sempre soube. Dizem que sou louco, mas eu sinto as energias ao meu redor. \n Quando jogaram o buquê de casamento, eu não tive dúvidas, o universo já tinha conspirado a nosso favor. Aquela magia era nossa. \n Foi como se tivessem lançado a Profecia e tu, minha linda, pegou o nosso futuro em forma de flores.",
 

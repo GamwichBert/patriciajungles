@@ -33,13 +33,13 @@ if (document.getElementById("timeCounter")) {
 
 // Textos das histórias na página principal
 const stories = {
-    1: "Tudo começou no dia 24 de Junho, a noite mais fria do ano. \n Como se a coruja de Hogwarts tivesse entregue a carta no aplicativo certo, os nossos perfis cruzaram-se no Tinder. Parecia magia intervir onde os trouxas chamam de acaso. \n E assim começou a nossa jornada épica, formando a nossa própria Sociedade do Anel de duas pessoas, afinal, pra nós dois só basta a gente.",
+    1: "Tudo começou no dia 24 de Junho, a noite mais fria do ano. \n Como se a coruja de Hogwarts tivesse entregue a carta no aplicativo certo, os nossos perfis cruzaram-se no Tinder. Parecia magia intervir onde os trouxas chamam de acaso. \n E assim começou a nossa jornada épica, formando a nossa própria Sociedade do Anel de duas pessoas,\n afinal, pra nós dois só basta a gente.",
 
-    2: "Lembra do primeiro dia? Da expectativa imensa? \n E então fomos ao Galgo.Aquele bar foi o nosso Prancing Pony. Tivemos uma pizza quadrada absolutamente incrível e, acima de tudo, o chopp do Iron Maiden. Cá entre nós, sim, ele tem gosto de baunilha, porque afinal, tu tens sempre razão. \n Foi ali que a nossa jornada juntos realmente começou.",
+    2: "Lembra do primeiro dia? Da expectativa imensa? \n E então fomos ao Galgo. Aquele bar foi o nosso Prancing Pony e você, o Gandalf que já estava esperando (na nossa história, tudo acontece da forma certa).Pedimos uma pizza quadrada com cebola agridoce e mais alguma coisa que não lembro... absolutamente incrível! e, acima de tudo, o chopp do Iron Maiden. Cá entre nós, sim, ele tem gosto de baunilha, porque afinal, tu tens sempre razão. \n Foi ali que a nossa jornada juntos realmente começou, finalizei aquela noite sabendo que queria mais, que queria você muito mais.",
 
-    3: "Eu sempre soube. Dizem que sou louco, mas eu sinto as energias ao meu redor. \n Quando jogaram o buquê de casamento, eu não tive dúvidas, o universo já tinha conspirado a nosso favor. Aquela magia era nossa. \n Foi como se tivessem lançado a Profecia e tu, minha linda, pegou o nosso futuro em forma de flores.",
+    3: "Eu sempre soube. \n Dizem que sou louco e eu até concordo, mas eu sinto as coisas ao meu redor de uma forma que, para você, foi fácil explicar. \n Quando jogaram o buquê, eu Já sabia, era seu. Aquela magia era nossa. \n Foi como se tivessem lançado a Profecia e tu, minha linda, pegou o nosso futuro em forma de flores.",
 
-    4: "O meu Patrono seria com certeza algo que lembrasse o teu sorriso, porque pensar em ti espanta qualquer Dementador da minha vida. Tu és o meu feitiço Lumos nos dias mais escuros. \n É como dizem em Valfenda: o teu amor traz uma paz e uma força que eu antes desconhecia."
+    4: "O meu Patrono seria com certeza algo que lembrasse o teu sorriso, porque pensar em ti espanta qualquer Dementador da minha vida.\n Tu és o meu feitiço Lumos (e o máxima ainda) nos dias mais escuros. \n É como dizem em Valfenda: o teu amor traz uma paz e uma força que eu antes desconhecia."
 };
 
 function showStory(id) {
@@ -63,15 +63,15 @@ function showStory(id) {
     storyText.classList.add("fade-in");
 }
 
-// **NOVO**: Função para abrir os Pergaminhos Todos Juntos
+// Função para abrir os Pergaminhos Todos Juntos
 function toggleScroll(element) {
     // Pega todos os pergaminhos da página
     const allScrolls = document.querySelectorAll(".scroll-item");
 
-    // Verifica se o clicado jÃ¡ está aberto ou fechado
+    // Verifica se o clicado já¡ está aberto ou fechado
     const isOpen = element.classList.contains("open");
 
-    // Aplica a mesmíssima alteração a todos os pergaminhos
+    // Aplica a mesma alteração a todos os pergaminhos
     allScrolls.forEach(scroll => {
         if (isOpen) {
             scroll.classList.remove("open");
@@ -89,7 +89,7 @@ function createFloatingMagic() {
     const magic = document.createElement('div');
     magic.classList.add('floating-magic');
 
-    const icons = ['⚡', '💍', '🪄', '🪽', '✨', '⭐', '🦉', '🗡️', '🧙‍♂️', '🧝‍♀️', '🐉', '🏰'];
+    const icons = ['⚡', '💍', '✨', '⭐', '🦉', '🗡️', '🧙‍♂️', '🧝‍♀️', '🐉', '🏰'];
     magic.innerText = icons[Math.floor(Math.random() * icons.length)];
 
     magic.style.left = Math.random() * 100 + 'vw';
@@ -110,7 +110,7 @@ function createFloatingMagic() {
 // Seção de ícones flutuantes
 setInterval(createFloatingMagic, 1000);
 
-// Efeito Varinha Mágica (Brilho ao mexer o mouse)
+// Efeito Varinha Mágica
 document.addEventListener('mousemove', function(e) {
     if (Math.random() > 0.5) return; // Controla a quantidade de partículas
     

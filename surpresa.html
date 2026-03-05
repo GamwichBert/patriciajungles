@@ -122,13 +122,21 @@
     <script>
         // Função para fugir com o botão "Não"
         function moveNo(btn) {
-            // Pegar as dimensões da janela e descontar o super tamanho do botão para ele não sair da tela
-            const maxX = window.innerWidth - btn.clientWidth - 30;
-            const maxY = window.innerHeight - btn.clientHeight - 30;
+            // Remove do container com backdrop-filter para a posição fixed funcionar com innerWidth/innerHeight
+            if (btn.parentNode !== document.body) {
+                document.body.appendChild(btn);
+                btn.style.zIndex = '9999';
+            }
 
-            // Gerar posição que nunca fica menor que 20px (para não colar no topo/esquerda)
-            const newX = Math.max(20, Math.random() * maxX);
-            const newY = Math.max(20, Math.random() * maxY);
+            // Pegar as dimensões da janela e descontar o super tamanho do botão para ele não sair da tela
+            const maxX = window.innerWidth - btn.offsetWidth - 20;
+            const maxY = window.innerHeight - btn.offsetHeight - 20;
+
+            // Gerar posição que nunca fica menor que 10px e máxima maxX
+            const MathMax = Math.max;
+            const MathMin = Math.min;
+            const newX = MathMax(10, MathMin(Math.random() * window.innerWidth, maxX));
+            const newY = MathMax(10, MathMin(Math.random() * window.innerHeight, maxY));
 
             btn.style.position = 'fixed';
             btn.style.left = newX + 'px';
@@ -149,6 +157,7 @@
 
             spark.style.animationDelay = Math.random() * 2 + 's';
 
+            // Fazer alguns serem rosinhas claros
             if (Math.random() > 0.5) {
                 spark.style.background = '#ffb8d9';
                 spark.style.boxShadow = '0 0 10px 2px rgba(255, 184, 217, 0.8)';
